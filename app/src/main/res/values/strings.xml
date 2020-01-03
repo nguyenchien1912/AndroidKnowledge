@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AndroidKnowledge</string>
+    <string-array name="arrProvincial">
+        <item>Hà Nội</item>
+        <item>Hà Giang</item>
+        <item>Cao Bằng</item>
+        <item>Bắc Kạn</item>
+        <item>Lạng Sơn</item>
+        <item>Tuyên Quang</item>
+        <item>Phú Thọ</item>
+        <item>Quảng Ninh</item>
+        <item>Nam Định</item>
+        <item>Vĩnh Phúc</item>
+        <item>Nghệ An</item>
+        <item>Quảng Bình</item>
+        <item>Sóc Trăng</item>
+    </string-array>
+    <string-array name="level">
+        <item>University</item>
+        <item>Colleges</item>
+        <item>Intermediate</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
