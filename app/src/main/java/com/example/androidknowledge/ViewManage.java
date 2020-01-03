@@ -43,7 +43,6 @@ public class ViewManage extends BaseActivity {
         GridView();
         ListInformation();
         TabHost();
-        TabLayout();
     }
 
     @Override
@@ -98,12 +97,5 @@ public class ViewManage extends BaseActivity {
             }
         });
     }
-    private void TabLayout() {
-        tablayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ViewManage.this, TabLayoutActivity.class));
-            }
-        });
-    }
+
 }
