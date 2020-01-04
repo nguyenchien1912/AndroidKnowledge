@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="310dp"
-        android:text="tabhost manager account" />
+        android:text="tabhost" />
     <Button
         android:id="@+id/tablayout"
         android:layout_centerHorizontal="true"

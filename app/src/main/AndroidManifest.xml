@@ -34,6 +34,10 @@
             tools:ignore="LockedOrientationActivity"/>
 
         <activity android:name=".TabHost.TabHostActivity"/>
+
+        <activity android:name=".Intent.IntentActivity"/>
+        <activity android:name=".Intent.DataActivity"/>
+
     </application>
 
 </manifest>

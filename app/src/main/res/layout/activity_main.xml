@@ -23,8 +23,18 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="65dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="107dp"
+        android:layout_marginTop="100dp"
         android:text="view advanced" />
+    <Button
+        android:id="@+id/intent"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="170dp"
+        android:text="intent " />
 
     <Button
         android:id="@+id/exit"

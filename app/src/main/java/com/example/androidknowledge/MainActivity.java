@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.example.androidknowledge.Intent.IntentActivity;
+
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
@@ -16,6 +18,9 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.viewadvanced)
     Button viewadvanced;
+
+    @BindView(R.id.intent)
+    Button intent;
 
     @BindView(R.id.exit)
     Button exit;
@@ -29,8 +34,18 @@ public class MainActivity extends BaseActivity {
     protected void setupListener() {
         Notification();
         ViewAdvanced();
+        TestIntent();
         Exit();
 
+    }
+
+    private void TestIntent() {
+        intent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, IntentActivity.class));
+            }
+        });
     }
 
     @Override
