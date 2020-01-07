@@ -40,11 +40,21 @@
         android:layout_marginRight="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <CheckBox
+        android:id="@+id/save_login"
+        android:layout_marginTop="290dp"
+        android:text="save user "
+        android:textSize="25sp"
+        android:layout_marginLeft="100dp"
+        android:textColorHint="#2196F3"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/login"
         android:layout_centerHorizontal="true"
         android:text="login"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="370dp"
         android:layout_marginLeft="120dp"
         android:background="#2196F3"
         android:layout_width="wrap_content"
