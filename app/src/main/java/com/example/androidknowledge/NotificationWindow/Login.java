@@ -1,5 +1,6 @@
 package com.example.androidknowledge.NotificationWindow;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,15 +9,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.androidknowledge.BaseActivity;
 import com.example.androidknowledge.R;
 
-import static com.example.androidknowledge.constant.SAVELOGIN;
-
-public class Login extends AppCompatActivity {
+public class Login extends Activity {
     private CheckBox saveLogin;
     private static EditText user,password;
     private static Button login;
@@ -87,4 +86,5 @@ public class Login extends AppCompatActivity {
         login = (Button) findViewById(R.id.login);
         saveLogin = (CheckBox) findViewById(R.id.save_login);
     }
+
 }

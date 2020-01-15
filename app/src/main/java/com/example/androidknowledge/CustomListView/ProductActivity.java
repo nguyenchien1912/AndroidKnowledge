@@ -1,14 +1,16 @@
 package com.example.androidknowledge.CustomListView;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.androidknowledge.R;
 
 import java.util.ArrayList;
 
-public class ProductActivity extends AppCompatActivity {
+public class ProductActivity extends Activity {
     ListView lvProduct;
     ArrayList<Product> productList;
     ProductAdapter productAdapter;
@@ -17,7 +19,6 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_view);
-
         addControls();
         addEvent();
     }
@@ -40,7 +41,7 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     /** Add data to bookList*/
-    public void createData() {
+    private void createData() {
         Product product = new Product(R.drawable.imagecustom1,"Hoa 1","100.000 vnđ");
         productList.add(product);
         product = new Product(R.drawable.imagecustom2,"Hoa 2","200.000 vnđ");
@@ -53,4 +54,6 @@ public class ProductActivity extends AppCompatActivity {
         productList.add(product);
         productAdapter.notifyDataSetChanged();
     }
+
+
 }

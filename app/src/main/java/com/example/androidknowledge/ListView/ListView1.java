@@ -44,6 +44,6 @@ public class ListView1 extends BaseActivity {
 
     @Override
     protected void populateData() {
-
+        HideTitle();
     }
 }

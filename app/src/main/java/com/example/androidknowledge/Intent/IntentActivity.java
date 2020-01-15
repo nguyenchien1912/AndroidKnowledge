@@ -11,10 +11,10 @@ import com.example.androidknowledge.R;
 
 import butterknife.BindView;
 
-import static com.example.androidknowledge.constant.REQUESTCODE;
-import static com.example.androidknowledge.constant.RESULTCODE;
-import static com.example.androidknowledge.constant.RETURNDATA;
-import static com.example.androidknowledge.constant.SENDDATA;
+import static com.example.androidknowledge.Constant.REQUESTCODE;
+import static com.example.androidknowledge.Constant.RESULTCODE;
+import static com.example.androidknowledge.Constant.RETURNDATA;
+import static com.example.androidknowledge.Constant.SENDDATA;
 
 public class IntentActivity extends BaseActivity {
     @BindView(R.id.name_intent)
@@ -36,7 +36,7 @@ public class IntentActivity extends BaseActivity {
 
     @Override
     protected void setupListener() {
-
+        HideTitle();
     }
 
     @Override

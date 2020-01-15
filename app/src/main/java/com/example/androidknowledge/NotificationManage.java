@@ -1,18 +1,20 @@
 package com.example.androidknowledge;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidknowledge.NotificationWindow.CreatNotification;
 import com.example.androidknowledge.NotificationWindow.Information;
 import com.example.androidknowledge.NotificationWindow.Login;
 
-public class NotificationManage extends AppCompatActivity {
+public class NotificationManage extends Activity {
     Button takeinfo,tologin,creatnotification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +50,7 @@ public class NotificationManage extends AppCompatActivity {
         tologin = (Button) findViewById(R.id.tologin);
         creatnotification = (Button) findViewById(R.id.creatnotification);
     }
+
+
 
 }

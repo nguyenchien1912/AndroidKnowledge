@@ -1,5 +1,6 @@
 package com.example.androidknowledge.NotificationWindow;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,12 +11,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidknowledge.BaseActivity;
 import com.example.androidknowledge.R;
 
-public class CreatNotification extends AppCompatActivity {
+public class CreatNotification extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,7 @@ public class CreatNotification extends AppCompatActivity {
         String s=i.getStringExtra("CHITIET");
         TextView detail =(TextView) findViewById(R.id.detail);
         detail.setText(s);
+
 
     }
     public void handligCloseNotification(View view)
@@ -50,4 +53,6 @@ public class CreatNotification extends AppCompatActivity {
         notificationManager.notify(123,builder.build());
 
     }
+
+
 }

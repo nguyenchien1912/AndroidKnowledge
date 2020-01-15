@@ -35,8 +35,18 @@
 
         <activity android:name=".TabHost.TabHostActivity"/>
 
-        <activity android:name=".Intent.IntentActivity"/>
-        <activity android:name=".Intent.DataActivity"/>
+        <!--       cách 1 tránh bàn phím đè lên nội dung
+                   android:windowSoftInputMode="stateVisible|adjustResize"
+
+                   cách 2
+                   getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);-->
+        <activity
+            android:name=".Intent.IntentActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
+
+        <activity
+            android:name=".Intent.DataActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
 
     </application>
 

@@ -2,9 +2,14 @@ package com.example.androidknowledge;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 
 import com.example.androidknowledge.Intent.IntentActivity;
@@ -25,6 +30,8 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.exit)
     Button exit;
 
+    @BindView(R.id.test_menu)
+    TextView testmenu;
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_main;
@@ -32,6 +39,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setupListener() {
+
         Notification();
         ViewAdvanced();
         TestIntent();
@@ -50,7 +58,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void populateData() {
-
+        setTitle();
     }
 
     private void Notification()
@@ -99,5 +107,38 @@ public class MainActivity extends BaseActivity {
                 dialog.show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.search :
+                testmenu.setText("test search");
+                break;
+            case R.id.share :
+                testmenu.setText("test share");
+                break;
+            case R.id.setting :
+                testmenu.setText("test setting");
+                break;
+            case R.id.about :
+                testmenu.setText("test about");
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setTitle()
+    {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("MeMenu");
     }
 }

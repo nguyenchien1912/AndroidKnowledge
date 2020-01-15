@@ -1,14 +1,16 @@
 package com.example.androidknowledge.GridView;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.GridView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.androidknowledge.R;
 
 import java.util.ArrayList;
 
-    public class FlowerActivity extends AppCompatActivity {
+    public class FlowerActivity extends Activity {
         GridView gridView;
         ArrayList<Flower> flowerList;
         FlowerAdapter flowerAdapter;
@@ -17,7 +19,6 @@ import java.util.ArrayList;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_grid_view);
-
             addControls();
             addEvent();
         }
@@ -63,4 +64,5 @@ import java.util.ArrayList;
             flowerList.add(flower);
             flowerAdapter.notifyDataSetChanged();
         }
+
     }

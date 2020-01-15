@@ -1,5 +1,6 @@
 package com.example.androidknowledge.NotificationWindow;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,11 +11,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidknowledge.R;
 
-public class Information extends AppCompatActivity {
+public class Information extends Activity {
     private static EditText name, cardId, addinfo;
     private static RadioButton intermediate, college, university;
     private static CheckBox readBook, readNewspaper, readCoding;

@@ -22,7 +22,7 @@ public class TabHostActivity extends BaseActivity {
 
     @Override
     protected void setupListener() {
-
+        HideTitle();
     }
 
     @Override

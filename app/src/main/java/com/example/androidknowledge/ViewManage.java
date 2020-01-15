@@ -38,6 +38,7 @@ public class ViewManage extends BaseActivity {
 
     @Override
     protected void setupListener() {
+        HideTitle();
         ListView();
         CustomView();
         GridView();

@@ -1,11 +1,14 @@
 package com.example.androidknowledge.InformationAndList;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -17,7 +20,9 @@ import com.example.androidknowledge.BaseActivity;
 import com.example.androidknowledge.ListView.ListView1;
 import com.example.androidknowledge.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import butterknife.BindView;
 
@@ -57,13 +62,14 @@ public class ListInformationActivity extends BaseActivity {
 
     @Override
     protected void setupListener() {
-
+        HideTitle();
     }
 
     @Override
     protected void populateData() {
             spinner();
             place();
+            date();
             addinfo();
     }
 
@@ -116,6 +122,34 @@ public class ListInformationActivity extends BaseActivity {
                 else c+=" Girl " + dateofbirth.getText().toString()+" " + autotextPlace.getText().toString() + " " + spin.getSelectedItem().toString() ;
                 information1s.add(c);
                 lvinfo();
+            }
+        });
+    }
+
+    private void date()
+    {
+
+        Calendar now = Calendar.getInstance(); //lấy ngày tháng năm hiện tại
+//        now.getTime().toString(); lấy toàn bộ thông tin , thứ ngày tháng năm giờ
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");// or ("hh/mm/ss") để định dạng ngày tháng năm theo dấu /
+
+//        TimePickerDialog gần giống như DatePickerDialog
+        DatePickerDialog datePickerDialog = new DatePickerDialog(ListInformationActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year,month,dayOfMonth); // set ngày tháng năm , sau khi lựa chọn
+                dateofbirth.setText(simpleDateFormat.format(calendar.getTime()).toString());
+
+            }
+        },now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH));
+
+        dateofbirth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                hiển thị bảng ngày tháng năm
+                datePickerDialog.show();
             }
         });
     }

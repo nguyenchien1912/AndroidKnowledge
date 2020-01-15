@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 
-import static com.example.androidknowledge.constant.RESULTCODE;
-import static com.example.androidknowledge.constant.RETURNDATA;
-import static com.example.androidknowledge.constant.SENDDATA;
+import static com.example.androidknowledge.Constant.RESULTCODE;
+import static com.example.androidknowledge.Constant.RETURNDATA;
+import static com.example.androidknowledge.Constant.SENDDATA;
 
 public class DataActivity extends BaseActivity {
     @BindView(R.id.lv_danhba)
@@ -36,7 +36,7 @@ public class DataActivity extends BaseActivity {
 
     @Override
     protected void setupListener() {
-
+        HideTitle();
     }
 
     @Override
