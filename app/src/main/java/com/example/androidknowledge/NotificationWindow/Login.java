@@ -31,19 +31,7 @@ public class Login extends Activity {
 
                 SaveLogin();
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
-                builder.setTitle("Login");
-                builder.setMessage("User="+user.getText().toString()+'\n'
-                        +"password=" +password.getText().toString() );
-                builder.setPositiveButton("CLOSE", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.setCanceledOnTouchOutside(false);
-                dialog.show();
+                dialog();
             }
 
         });
@@ -87,4 +75,20 @@ public class Login extends Activity {
         saveLogin = (CheckBox) findViewById(R.id.save_login);
     }
 
+    private void dialog()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+        builder.setTitle("Login");
+        builder.setMessage("User="+user.getText().toString()+'\n'
+                +"password=" +password.getText().toString() );
+        builder.setPositiveButton("CLOSE", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
 }

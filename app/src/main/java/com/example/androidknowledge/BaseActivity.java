@@ -31,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void populateData();
     protected void HideTitle()
     {
+        // ẩn Title
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
     }

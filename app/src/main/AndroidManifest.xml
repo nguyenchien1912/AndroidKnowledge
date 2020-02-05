@@ -23,7 +23,9 @@
 
         <activity android:name=".NotificationWindow.CreatNotification"/>
         <activity android:name=".NotificationWindow.Information"/>
-        <activity android:name=".NotificationWindow.Login"/>
+        <activity
+            android:name=".NotificationWindow.Login"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
 
         <activity android:name=".ListView.ListView1"/>
         <activity android:name=".CustomListView.ProductActivity"/>
@@ -47,6 +49,8 @@
         <activity
             android:name=".Intent.DataActivity"
             android:windowSoftInputMode="stateVisible|adjustResize"/>
+
+        <activity android:name=".SaveData.InternalStorage"/>
 
     </application>
 

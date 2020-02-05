@@ -13,6 +13,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 
 import com.example.androidknowledge.Intent.IntentActivity;
+import com.example.androidknowledge.SaveData.InternalStorage;
 
 import butterknife.BindView;
 
@@ -32,6 +33,9 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.test_menu)
     TextView testmenu;
+
+    @BindView(R.id.save_data)
+    Button savedata;
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_main;
@@ -43,18 +47,11 @@ public class MainActivity extends BaseActivity {
         Notification();
         ViewAdvanced();
         TestIntent();
+        SaveData();
         Exit();
 
     }
 
-    private void TestIntent() {
-        intent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, IntentActivity.class));
-            }
-        });
-    }
 
     @Override
     protected void populateData() {
@@ -135,6 +132,25 @@ public class MainActivity extends BaseActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void TestIntent() {
+        intent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, IntentActivity.class));
+            }
+        });
+    }
+
+    private void SaveData() {
+        savedata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, InternalStorage.class));
+            }
+        });
+    }
+
 
     private void setTitle()
     {
