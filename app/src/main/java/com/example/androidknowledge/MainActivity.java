@@ -13,6 +13,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 
 import com.example.androidknowledge.Intent.IntentActivity;
+import com.example.androidknowledge.PlayMusic.PlayMusic;
 import com.example.androidknowledge.SaveData.InternalStorage;
 
 import butterknife.BindView;
@@ -36,6 +37,9 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.save_data)
     Button savedata;
+
+    @BindView(R.id.play_music)
+    Button playmusic;
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_main;
@@ -48,6 +52,7 @@ public class MainActivity extends BaseActivity {
         ViewAdvanced();
         TestIntent();
         SaveData();
+        playMusic();
         Exit();
 
     }
@@ -90,7 +95,7 @@ public class MainActivity extends BaseActivity {
                 builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        System.exit(0);
                     }
                 });
                 builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -151,6 +156,15 @@ public class MainActivity extends BaseActivity {
         });
     }
 
+    private void playMusic()
+    {
+        playmusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PlayMusic.class));
+            }
+        });
+    }
 
     private void setTitle()
     {
