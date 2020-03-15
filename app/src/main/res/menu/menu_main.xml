@@ -5,7 +5,8 @@
         android:id="@+id/search"
         android:title="Search"
         android:icon="@drawable/search_icon"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView" />
     <item
         android:id="@+id/share"
         android:title="Share"
