@@ -1,6 +1,9 @@
 package com.example.androidknowledge.PlayMusic;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
@@ -8,16 +11,24 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.androidknowledge.BaseActivity;
 import com.example.androidknowledge.R;
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -36,6 +47,11 @@ public class PlayMusic extends BaseActivity {
     @BindView(R.id.time_music)
     SeekBar seekbar;
 
+    @BindView(R.id.imageView)
+    ImageView imageView;
+
+    @BindView(R.id.button)
+    Button button;
 
 
     private MediaPlayer mediaPlayer;
@@ -45,6 +61,8 @@ public class PlayMusic extends BaseActivity {
     private double startTime = 0;
     private double finalTime = 0;
     public static int oneTimeOnly = 0;
+    private int request_code = 123;
+    private String playnhac = null;
     @Override
     protected int getLayoutRes() {
         return R.layout.activity_play_music;
@@ -57,7 +75,7 @@ public class PlayMusic extends BaseActivity {
         Play();
         setTime();
         MediaPlayerNext();
-
+        SetImage();
 
     }
 
@@ -65,10 +83,39 @@ public class PlayMusic extends BaseActivity {
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+
                 mediaPlayer.start();
 
             }
         });
+
+    }
+
+
+    private void SetImage() {
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent,request_code);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == request_code && resultCode == RESULT_OK && data != null) {
+            Uri uri = data.getData();
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(uri);
+                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                imageView.setImageBitmap(bitmap);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -90,6 +137,7 @@ public class PlayMusic extends BaseActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (mediaPlayer.isPlaying())
                 {
                     mediaPlayer.pause();
@@ -113,6 +161,7 @@ public class PlayMusic extends BaseActivity {
                 }
             }
         });
+
 
     }
 
@@ -192,6 +241,7 @@ public class PlayMusic extends BaseActivity {
     private void creat()
     {
         mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mediaPlayer = MediaPlayer.create(this,R.raw.thuan_theo_y_troi );
 
     }
