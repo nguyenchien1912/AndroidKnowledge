@@ -33,7 +33,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 <!--                    cách đổ trực tiếp => không khuyến khích sử dụng -->
-                    <include layout="@layout/tab_use_more"/>
+                    <include layout="@layout/tab_use_more" />
 
                 </LinearLayout>
 
